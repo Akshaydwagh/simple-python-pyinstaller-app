@@ -16,7 +16,7 @@ sh "git checkout master"
 }
 }
     
-        stage('Build') {
+        stage('Build and Unittestcases') {
 		      agent {
             
                 any {
@@ -27,20 +27,10 @@ sh "git checkout master"
             steps {
                 sh 'python -m py_compile sources/add2vals.py sources/calc.py'
 		sh 'cp sources/*.py* /home/ec2-user/Akshay/'
+		sh 'py.test sources/test_calc.py'
 				
             }
         }
-        stage('Test') {
-             agent {
-                any {
-                    image 'qnib/pytest'
-                }
-				}
-            
-            steps {
-                sh 'py.test sources/test_calc.py'
-            }
-           
-        }
+        
         }
     }
