@@ -38,7 +38,7 @@ sh "git checkout master"
 				}
             
             steps {
-                sh 'py.test --junit-xml results.xml sources/test_calc.py'
+                sh 'py.test sources/test_calc.py'
             }
            
         }
