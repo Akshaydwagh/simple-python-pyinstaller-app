@@ -37,7 +37,7 @@ sh "git checkout master"
 				}
             
             steps {
-                sh 'py.test --verbose --junit sources/test_calc.py'
+                junit 'sources/test_calc.py'
             }
            
         }
