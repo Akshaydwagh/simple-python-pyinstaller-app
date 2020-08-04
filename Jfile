@@ -1,5 +1,6 @@
 pipeline {
     agent none
+    stages {
        
 	   stage('scm checkout') {
 git 'https://github.com/Akshaydwagh/simple-python-pyinstaller-app.git'
@@ -38,5 +39,5 @@ sh "git checkout master"
                 }
             }
         }
-        
+        }
     }
