@@ -17,7 +17,7 @@ sh "git checkout master"
         stage('Build') {
 		      agent {
             
-                none {
+                docker {
                     image 'python:2-alpine'
                 }
 				}
@@ -28,7 +28,7 @@ sh "git checkout master"
         }
         stage('Test') {
              agent {
-                none {
+                docker {
                     image 'qnib/pytest'
                 }
 				}
