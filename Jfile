@@ -1,12 +1,18 @@
 pipeline {
-    agent docker
+    agent none
     stages {
        
 	   stage('scm checkout') {
+	   agent {
+            
+                docker {
+				}
+				}
 	   steps{
         git 'https://github.com/Akshaydwagh/simple-python-pyinstaller-app.git'
 }
 }
+
 stage('checkout to different branch') {
 steps{
 sh "git branch -r"
